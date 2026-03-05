@@ -1,0 +1,29 @@
+name: Deploy Swagger API JSON to S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-west-1
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+
+      - name: Validate JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('api.json'))"
+
+      - name: Upload api.json to S3
+        run: |
+          aws s3 cp api.json s3://swagger-ui-manuel/api.json \
+            --content-type application/json \
+            --cache-control no-cache

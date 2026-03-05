@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Swagger API Documentation S3 Deployment
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Name of existing Swagger UI S3 bucket
+
+Resources:
+  ApiJsonBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref BucketName
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal: "*"
+            Action: "s3:GetObject"
+            Resource: !Sub "arn:aws:s3:::${BucketName}/*"
+
+Outputs:
+  BucketName:
+    Value: !Ref BucketName

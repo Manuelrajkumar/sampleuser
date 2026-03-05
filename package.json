@@ -1,0 +1,27 @@
+{
+  "name": "sampleuser",
+  "version": "1.0.0",
+  "description": "Sample user API - DEMO purpose",
+  "homepage": "https://github.com/Manuelrajkumar/sampleuser#readme",
+  "bugs": {
+    "url": "https://github.com/Manuelrajkumar/sampleuser/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manuelrajkumar/sampleuser.git"
+  },
+  "license": "ISC",
+  "author": "Manuel",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "node -e \"JSON.parse(require('fs').readFileSync('api.json'))\""
+  },
+  "dependencies": {
+    "swagger-ui-dist": "^5.32.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}
