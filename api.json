@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Sample User API",
+    "title": "Sample User API modified for Swagger UI demo",
     "description": "Simple API with two endpoints for Swagger UI demo",
     "version": "1.0.0"
   },
