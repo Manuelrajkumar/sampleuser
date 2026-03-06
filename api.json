@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Sample User API modified for Swagger UI demo",
-    "description": "Simple API with two endpoints",
+    "description": "Simple API with two endpoints for the demo - to sumeet and PAUL",
     "version": "1.0.0"
   },
   "servers": [
